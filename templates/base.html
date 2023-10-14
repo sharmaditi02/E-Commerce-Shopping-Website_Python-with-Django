@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>10MinZepto</title>
+    <style>
+        :root
+        {
+        --bgcolor:linear-gradient(60deg,#1C768F,#032539);
+        --txtcolor:#1C768F;
+        --txtmycolor:#032539;
+        }
+        .t1
+        {
+        font-size:14px;
+        }
+        .t2{
+        font-family:FZShuTi;
+        }
+        .bg-mycolor
+        {
+        background:var(--bgcolor)!important;
+        }
+        .txt-mycolor
+        {
+        color:var(--txtcolor);
+        }
+        .fa-brands
+        {
+        border:1px solid white;
+        padding:.3%;
+        transition:all 1s;
+        }
+        .fa-brands:hover
+        {
+        transform:rotate(360deg);
+        transition:all 1s;
+        background:white;
+<!--color:#1C768F;-->
+        }
+        .fa-square-facebook:hover{
+        color:#1877F2;
+        }
+        .fa-square-twitter:hover{
+        color:#1DA1F2;
+        }
+        .fa-square-instagram:hover{
+        color:#DD2A7B;
+        }
+        .fa-square-whatsapp:hover{
+        color:#128C7E
+        }
+        .fa-square-youtube:hover{
+        color:#FF0000;
+        }
+        .fa-linkedin:hover{
+        color:#0e76a8;
+        }
+
+        .iconA:hover
+        {
+        transform:rotate(360deg);
+        transition:all 1s;
+        }
+
+        .fa-flip{
+        color:white !important;
+        }
+        #menu1{
+        background:var(--bgcolor) !important;
+        padding-left:10px;
+        }
+        #menu
+        {
+        background:transparent !important;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        .ufooter{
+        min-height:300px;
+        }
+        .bfooter{
+        min-height:50px;
+        }
+        .f{
+         min-height:200px;
+         background:#2f343c;
+         color:white;
+         }
+        .txt-mycolor
+        {
+        color:var(--txtmycolor);
+        }
+        #ufooter{
+        height:600px;
+        background:url("{% static 'images/G2.png' %}");
+        background-size:cover;
+        }
+        .bfooter{
+        background:var(--bgcolor);
+        color:white;
+        font-family:algerian;
+        }
+
+        #uf{
+        height:600px;
+        background:rgba(0,0,0,.9);
+        padding-top:150px;
+        color:white;
+        font-size:20px;
+        }
+        #uf2{
+        height:600px;
+        background:rgba(0,0,0,.9);
+        padding-top:150px;
+        color:white;
+        font-size:20px;
+        }
+        #uf3{
+        height:600px;
+        background:rgba(0,0,0,.9);
+        padding-top:150px;
+        color:white;
+        font-size:20px;
+        }
+        #uf1{
+        height:600px;
+        background:rgba(0,0,0,.9);
+        padding-top:150px;
+        color:white;
+        font-size:20px;
+        }
+        #truck{
+        background:var(--bgcolor)!important;
+        }
+       .nav-item:hover{
+        border-radius:10px;
+        transform:scaleX(1.1);
+        border:1px solid white;
+        }
+
+    </style>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+</head>
+<body>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+<div class="container-fluid">
+    <div class="row t1 text-center bg-mycolor text-light py-1">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-phone-volume fa-shake"></i> +91,1234567890
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-envelopes-bulk"></i> zepto123@gmail.com
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            An ISO Certified Software Company
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-brands fa-square-facebook iconA"></i>
+            <i class="fa-brands fa-square-twitter iconA"></i>
+            <i class="fa-brands fa-square-instagram iconA"></i>
+            <i class="fa-brands fa-square-youtube iconA"></i>
+            <i class="fa-brands fa-square-whatsapp iconA"></i>
+            <i class="fa-brands fa-linkedin icon iconA"></i>
+        </div>
+    </div>
+    <div class="row t2">
+        <div class="col-sm-10 mx-auto">
+        <div class="row my-2">
+            <div class="col-sm-4 fs-2">
+                10min<b class="txt-mycolor">Zepto
+<!--                <i class="fa-solid fa-laptop-file"></i>-->
+                <i class="fa-solid fa-truck-fast"></i></b>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 text-end">
+                {% if request.session.user %}
+                    <a href="/user/cartitem/" class="btn btn-sm bg-mycolor text-light">Cart<i class="fa-solid fa-cart-shopping"></i><b class="badge text-bg-light">{{request.session.cartitem}}</b></a>
+                     <a href="/user/orderslist/" class="btn btn-sm bg-mycolor text-light">My Orders<i class="fa-solid fa-truck-fast"></i><b class="badge text-bg-light"></b></a>
+                {% else %}
+                    <a href="/user/cartitem/" class="btn bg-mycolor text-light">Cart<i class="fa-solid fa-cart-shopping"></i><b class="badge text-bg-light">0</b></a>
+                    {% endif %}
+            </div>
+            <div class="col-sm-2 fs-5">
+                {% if request.session.user %}
+
+          <a href="/user/myprofile/" style="text-decoration:none;color:black">{{request.session.username}}
+          <img src="/{{request.session.userpic}}" style="max-height:45px;width:45px;" class="img-thumbnail"/>
+          </a>
+
+          {% else %}
+
+          <a href="#" class="nav-link disabled">Default User
+          <img src="{% static 'images/user.jpg' %}" style="max-height:45px;" class="img-thumbnail"/>
+          </a>
+
+          {% endif %}
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row t3" id="menu1">
+        <div class="col-sm-9 mx-auto">
+<!--start menu-->
+
+<nav class="navbar navbar-expand-lg " id="menu">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+<!--            <i class="fa-solid fa-house"></i>-->
+          <a class="nav-link active" aria-current="page" href="/user/index/"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/about/"><i class="fa-solid fa-circle-info"></i> AboutUs</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/product/">Product</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/contact/"><i class="fa-solid fa-headset"></i> Customer Support</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/signup/"><i class="fa-solid fa-arrow-up-from-bracket"></i> Sign Up</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/myprofile/"><i class="fa-solid fa-user"></i>My Profile</a>
+        </li>
+          {% if request.session.user %}
+          <li class="nav-item">
+          <a class="nav-link" href="/user/signout/"><i class="fa-solid fa-right-to-bracket"></i>Log Out</a>
+        </li>
+          {% else %}
+          <li class="nav-item">
+          <a class="nav-link" href="/user/signin/"><i class="fa-solid fa-right-to-bracket"></i>Log In</a>
+        </li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--            end menu-->
+        </div>
+    </div>
+<div class="row">
+    <div class="col-sm-12 oy-4" style="min-height:500px;">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+    </div>
+    <div class="row" id="ufooter">
+      <div class="col-sm-3" id="uf">
+          <h3>Useful Links</h3><BR/>
+          <a href="/user/about/" style="text-decoration:none; color:white;">About Us</a><br/>
+          <a href="/user/product/" style="text-decoration:none; color:white;">Our Products</a><br/>
+          <a href="/user/contact/" style="text-decoration:none; color:white;">Customer Services</a><br/>
+      </div>
+      <div class="col-sm-3" id="uf1">
+              <h3>Categories</h3><br/>
+          <ul type="none" style="color:white;">
+              <li>Vegetables & Fruits</li>
+              <li>Cold Drinks & Juices</li>
+              <li>Bakers & Biscuits</li>
+              <li>Pharma & Wellness</li>
+              <li>Personal Care</li>
+              <li>Cleaning Essentials</li>
+              <li>Milk,Eggs & Breads</li>
+          </ul>
+          <br/>
+          Download From <img src="{% static 'images/p1.png' %}" style="height:60px;"/>
+      </div>
+      <div class="col-sm-3" id="uf2"><ul type="none">
+          <br/>
+          <br/>
+          <li>Organic & Premium</li>
+          <li>Sauces & Spreads</li>
+          <li>Instant & Frozen Food</li>
+          <li>Tea, Coffee & Health Drinks</li>
+          <li>Atta, Rice & Dal</li>
+          <li>Chicken, Meat & Fish</li>
+          <li>Pet Care</li>
+      </ul>
+      <br/>
+          <i style="font-family:STCaiyun;" class="fs-2">10minZepto</i>
+      <br/>
+
+      </div>
+      <div class="col-sm-3" id="uf3">
+          <h3>Popular Brands</h3>
+          <ul type="none">
+              <li>Amul</li>
+              <li>Haldiram</li>
+              <li>Nescafe</li>
+              <li>Elite Cake</li>
+              <li>Wow Momo</li>
+              <li>Lays</li>
+              <li>Fortune</li>
+          </ul>
+      </div>
+        </div>
+<!--    end ufooter-->
+<!--    start bfooter-->
+    <!--    start bfooter -->
+    <div class="row bfooter">
+        <div class ="col-sm-12 bfooter bg-dark mt-1 fs-5 text-light text-center py-2">
+
+<div class="row">
+        <div class="col-sm-6">
+            <a href="https://www.techpile.in" target="_blank" style="text-decoration:none; color:white;">&copy;Techpile Technology Pvt.Ltd</a>
+        </div>
+        <div class="col-sm-6">
+            Designed & Developed By:<a href="/user/myprofile/" style="text decoration:none;color:white;">Aditi,Deeksha,Reeva</a>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+<!--end bfooter -->
+<!--end bfooter-->
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .form-control{
+    height:45px;
+    width:400px;
+    margin-bottom:.8;
+    }
+    .signup
+    {
+    border-top:5px solid white;
+    border-bottom:5px solid var(--bgcolor);
+    }
+    .pic{
+    padding-top:60px;
+    padding-left:140px;
+    padding-right:90px;
+    }
+    .images{
+    border-radius:50%;
+    border:5px solid white;
+    transition:all 5s;
+    }
+    .images:hover{
+    transform:scale(1.2);
+    transition:all 5s;
+    }
+    .form1{
+    margin-top:50px;
+    margin-bottom:50px;
+    width:500px;
+    height:560px;
+    border:5px solid white;
+    border-radius:20px;
+    transition:all 2s;
+    }
+    .form1:hover{
+    transform:scale(1.1);
+    transition:all 2s;
+    }
+    .logo1{
+
+    }
+    .logo2{
+
+    }
+    .logo3{
+
+    }
+    .logo4{
+
+    }
+    #r1{
+    height:300px;
+    width:600px;
+    }
+</style>
+<div class="row signup my-3"style="margin-left:20px;">
+  <div class="text-center fs-1 my-2">
+    Sign <b class="txt-mycolor">Up<i class="fa-solid fa-address-card"></i></b>
+  </div>
+<!--form start-->
+<div class="row bg-mycolor">
+    <div class="col-sm-10 mx-auto ">
+        <div class="row">
+                <div class="col-sm-7 form1 text-light pt-2">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                <b style="font-family:compact;font-size:20px;">Name</b><input type="text" required name="name" placeholder="Name" class="form-control"/>
+                <b style="font-family:compact;font-size:20px;">Email</b><input type="text" required name="email" placeholder="@gmail.com" class="form-control"/>
+                <b style="font-family:compact;font-size:20px;">Mobile</b><input type="text" required name="mobile" placeholder="Mobile" class="form-control"/>
+                <b style="font-family:compact;font-size:20px;">Password</b><input type="password" required name="passwd" placeholder="Password" class="form-control"/>
+                <b style="font-family:compact;font-size:20px;">Profile Picture</b><input type="file" required name="fu" class="form-control"/>
+                <b style="font-family:compact;font-size:20px;">Address</b><textarea class="form-control" name="address" placeholder="Address"></textarea>
+                        <input type="submit" value="SAVE" class="btn bg-mycolor text-light mb-5 mt-2"/>
+                 </form>
+                </div>
+            <div class="col-sm-5 pic mt-4">
+          <img src="{% static 'C:\Users\sharm\OneDrive\Desktop\Zepto\Final Project\MyProject\static\images\signup3.jpg'%}" class="images"/>
+                <div class="row" id="r1">
+
+                    <i style="font-family:STXinwei;font-size:50px;margin-top:80px;margin-left:80px;"class="text-light"><i class="fa-regular fa-hand-point-left fa-beat-fade"></i> Register Here</i>
+
+                  </div>
+           </div>
+        </div>
+     </div>
+   </div>
+ </div>
+</div>
+{% endblock %}

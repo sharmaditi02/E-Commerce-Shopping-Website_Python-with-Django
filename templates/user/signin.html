@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .form-control{
+    height:45px;
+    }
+    #l1{
+    box-shadow:3px 10px 5px 8px #032539;
+    border-right:1px groove white;
+    border-bottom:1px groove white;
+    }
+    #l1:hover{
+    box-shadow:3px 10px 5px 10px #032539;
+    transform:scale(1.1);
+    transform:translateY(15px);
+    transition:all 1s;
+    border-right:3px groove white;
+    border-bottom:3px groove white;
+    }
+    #b1:hover{
+    border:2px solid white;
+    transform:scale(1.1);
+    }
+</style>
+<div class="text-center fs-2">
+    Sign <b class="txt-mycolor">In<i class="fa-solid fa-address-card"></i></b>
+</div>
+<div class="row mx-auto mt-3 px-3"id="l1" style="background:var(--bgcolor);width:700px;height:300px;">
+    <div class="col-sm-6 mx-auto mt-5">
+        <form method="post">
+            {% csrf_token %}
+        <div class="input-group my-3">
+            <i class="input-group-text bg-mycolor text-light" style="width:45px;text-align:center;">
+                <i class="fa-solid fa-user"></i>
+            </i>
+            <input type="email" placeholder="Username" required name="email" class="form-control"/>
+
+        </div>
+            <div class="input-group my-3">
+            <i class="input-group-text bg-mycolor text-light" style="width:45px;text-align:center;">
+              <i class="fa-solid fa-key"></i>
+            </i>
+            <input type="password" placeholder="Enter Your Password" required name="passwd" class="form-control"/>
+
+        </div>
+            <input type="submit" id="b1" value="LogIn" class="btn bg-mycolor text-light"/>
+            <hr/>
+            <center class="text-light">Don't have an Account?<a href="/user/signup/">Click Here</a></center>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

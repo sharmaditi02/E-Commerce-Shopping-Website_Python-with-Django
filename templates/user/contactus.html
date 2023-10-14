@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .head{
+    Background:#1C768F;
+    height:680px;
+    width:100%;
+    margin-left:5px;
+    margin-bottom:20px;
+    }
+
+    .form-control{
+    height:45px;
+    width:400px;
+    margin-bottom:1%;
+    }
+    .form{
+    height:500px;
+    width:600px;
+    Background:#032539;
+    color:white;
+    border:2px solid white;
+    border-radius:10px;
+    margin:100px auto;
+    padding-left:100px;
+    padding-top:50px;
+  }
+     .form1{
+    height:450px;
+    width:600px;
+    color:white;
+    margin:100px auto;
+    padding-left:100px;
+    padding-top:50px;
+
+    }
+    .icon1{
+    color:white !important;
+    border-radius:50% !important;
+    font-size:30px;
+    }
+    .btn{
+    background:#1C768F;
+    color:white;
+    font-size:20px;
+    width:100px;
+    }
+    .btn:hover{
+    border:2px solid #1C768F;
+    }
+
+</style>
+<div class="text-center fs-2">
+    Contact <b class="txt-mycolor">Us <i class="fa-solid fa-headset"></i></b>
+</div>
+<div class="row head">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-6 form">
+                 <form method="post">
+                     {% csrf_token %}
+                     <h1>Get In Touch</h1>
+                     Name<input type="text" name="name" placeholder="Name" class="form-control"/>
+                     Email<input type="email" name="email" placeholder="@gmail.com" class="form-control"/>
+                     Mobile<input type="number" name="mobile" placeholder="Mobile..." class="form-control"/>
+                     Message<textarea style="min-height:80px;resize:none;" name="message" class="form-control" ></textarea>
+                     <input type="submit" value="Save" class="btn mt-2"/>
+
+            </form>
+                </div>
+            <div class="col-sm-6 form1">
+                <h1 class="txt-mycolor">Contact Information</h1><br/>
+                 <i class="fa-solid fa-location-dot icon1"></i>    <b class="txt-mycolor fs-4">Address</b>
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIKAS NAGAR, LUCKNOW, Lucknow, Uttar Pradesh.
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;226016
+                <br/>
+                <br/>
+                <i class="fa-solid fa-phone icon1"></i>   <b class="txt-mycolor fs-4">Phone</b>
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91 123457888, 504-34-76859
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91 856839397
+                <br/>
+                <br/>
+                <i class="fa-solid fa-envelope icon1"></i>  <b class="txt-mycolor fs-4">Email</b>
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minzepto123@gmail.com
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
